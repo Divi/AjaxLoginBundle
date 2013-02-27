@@ -1,0 +1,21 @@
+{% include 'DiviAjaxLoginBundle:Javascript:init.html.twig' %}
+
+<form action="{{ path("_security_check") }}" method="post" id="form-login">
+	<div>
+		<label for="username">Username</label>
+		<input type="text" id="username" name="_username" value="{{ last_username }}" />
+	</div>
+
+	<div>
+		<label for="password">Password</label>
+		<input type="password" id="password" name="_password" />
+	</div>
+
+	<button type="submit" class="sf-button">
+		<span class="border-l">
+			<span class="border-r">
+				<span class="btn-bg">Login</span>
+			</span>
+		</span>
+	</button>
+</form>
