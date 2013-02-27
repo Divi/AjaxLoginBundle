@@ -14,9 +14,9 @@ class AjaxFormLoginFactory extends FormLoginFactory
 	 * @return string
 	 */
 	public function getKey()
-    {
-        return 'ajax-form-login';
-    }
+	{
+		return 'ajax-form-login';
+	}
 
 	/**
 	 * If you want to make a success handler with injected parameters (like provider key),<br />
@@ -30,19 +30,19 @@ class AjaxFormLoginFactory extends FormLoginFactory
 	 * @return string
 	 */
 	protected function createAuthenticationSuccessHandler($container, $id, $config)
-    {
+	{
 		if (isset($config['success_handler'])) {
-            return $config['success_handler'];
-        }
+			return $config['success_handler'];
+		}
 
-        $successHandlerId = 'security.authentication.success_handler.' . $id . '.'.str_replace('-', '_', $this->getKey());
-        $successHandler   = $container->setDefinition($successHandlerId, new DefinitionDecorator('divi.ajax_login.ajax_athentication_success_handler'));
+		$successHandlerId = 'security.authentication.success_handler.' . $id . '.'.str_replace('-', '_', $this->getKey());
+		$successHandler   = $container->setDefinition($successHandlerId, new DefinitionDecorator('divi.ajax_login.ajax_athentication_success_handler'));
 
-        $successHandler->replaceArgument(1, array_intersect_key($config, $this->defaultSuccessHandlerOptions));
-        $successHandler->addMethodCall('setProviderKey', array($id));
+		$successHandler->replaceArgument(1, array_intersect_key($config, $this->defaultSuccessHandlerOptions));
+		$successHandler->addMethodCall('setProviderKey', array($id));
 
-        return $successHandlerId;
-    }
+		return $successHandlerId;
+	}
 
 	/**
 	 * If you want to make a failure handler with injected parameters (like provider key),<br />
@@ -56,16 +56,16 @@ class AjaxFormLoginFactory extends FormLoginFactory
 	 * @return string
 	 */
 	protected function createAuthenticationFailureHandler($container, $id, $config)
-    {
-        if (isset($config['failure_handler'])) {
-            return $config['failure_handler'];
-        }
+	{
+		if (isset($config['failure_handler'])) {
+			return $config['failure_handler'];
+		}
 
-        $id = 'security.authentication.failure_handler.' . $id . '.'.str_replace('-', '_', $this->getKey());
-        $failureHandler = $container->setDefinition($id, new DefinitionDecorator('divi.ajax_login.ajax_athentication_failure_handler'));
+		$id = 'security.authentication.failure_handler.' . $id . '.'.str_replace('-', '_', $this->getKey());
+		$failureHandler = $container->setDefinition($id, new DefinitionDecorator('divi.ajax_login.ajax_athentication_failure_handler'));
 
-        $failureHandler->replaceArgument(2, array_intersect_key($config, $this->defaultFailureHandlerOptions));
+		$failureHandler->replaceArgument(2, array_intersect_key($config, $this->defaultFailureHandlerOptions));
 
-        return $id;
-    }
+		return $id;
+	}
 }
