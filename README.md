@@ -42,6 +42,7 @@ public function registerBundles()
         new Divi\AjaxLoginBundle\DiviAjaxLoginBundle(),
     );
 }
+```
 
 ### Step 3: Configure your project
 
