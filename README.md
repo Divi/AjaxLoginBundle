@@ -46,7 +46,7 @@ public function registerBundles()
 
 ### Step 3: Configure your project
 
-Configure your form login using security.yml, change "form_login" authentication by "ajax_form_login"
+Configure your form login using security.yml, replace "form_login" authentication by "ajax_form_login"
 
 ``` yaml
 # app/config/security.yml
