@@ -63,7 +63,7 @@ security:
 ### Examples
 
 Two examples are available in the `Resources/views/Login` folder. Note: jQuery is required for these two examples. If not exists, it will be loaded dynamically (with Google API).
-The first example works with the AcmeBundle (Symfony standard) form login, the second with the [FOSUserBunble](https://github.com/FriendsOfSymfony/FOSUserBundle) form login.
+The first example works with the AcmeBundle (Symfony standard) form login, the second with the [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle) form login.
 
 If you want to use the javascript part on your login twig form, just include the init file :
 
