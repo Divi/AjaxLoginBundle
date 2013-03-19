@@ -11,6 +11,7 @@
             "email": "sylvain.lorinet@gmail.com"
         }
     ],
+    
     "require": {
         "php": ">=5.3.2"
     },
