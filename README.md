@@ -16,7 +16,7 @@ In your composer.json, add AjaxLoginBundle :
 ```js
 {
     "require": {
-        "divi/ajax-login-bundle": "*"
+        "divi/ajax-login-bundle": "dev-master"
     }
 }
 ```
