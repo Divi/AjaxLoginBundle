@@ -17,6 +17,12 @@
 		<service id="divi.ajax_login.ajax_athentication_failure_handler"
 				 class="%divi.ajax_login.ajax_athentication_failure_handler.class%"
 				 parent="security.authentication.failure_handler"
-		/>
+		>
+			<argument type="service" id="translator" />
+			<argument type="service" id="http_kernel" />
+            <argument type="service" id="security.http_utils" />
+            <argument type="collection" /> <!-- Options -->
+            <argument type="service" id="logger" on-invalid="null" />
+		</service>
     </services>
 </container>
