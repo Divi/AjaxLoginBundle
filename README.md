@@ -74,7 +74,3 @@ If you want to use the javascript part on your login twig form, just include the
 ## Issue or new feature ?
 
 Feel free to post your issue or feature request in the [issue tracker](https://github.com/Divi/AjaxLoginBundle/issues) !
-
-## TODO
-
-### Translations for error messages
