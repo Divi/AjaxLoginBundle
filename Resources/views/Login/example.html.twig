@@ -1,4 +1,4 @@
-{% include 'DiviAjaxLoginBundle:Javascript:init.html.twig' %}
+{% include 'DiviAjaxLoginBundle:Javascript:init.html.twig' with {'form_selector': '#form-login'} %}
 
 <form action="{{ path("_security_check") }}" method="post" id="form-login">
 	<div>
