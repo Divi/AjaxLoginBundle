@@ -17,14 +17,16 @@ class AjaxAuthenticationSuccessHandler extends DefaultAuthenticationSuccessHandl
      */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
+        $response = parent::onAuthenticationSuccess($request, $token);
+        
         if ($request->isXmlHttpRequest()) {
             return new JsonResponse(array(
                 'has_error'	  => false,
                 'username'	  => $token->getUser()->getUsername(),
-                'target_path' => $this->determineTargetUrl($request)
+                'target_path' => $response->getTargetUrl(),
             ));
         }
 
-        return parent::onAuthenticationSuccess($request, $token);
+        return $response;
     }
 }
