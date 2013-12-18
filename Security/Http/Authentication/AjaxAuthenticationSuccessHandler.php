@@ -22,9 +22,9 @@ class AjaxAuthenticationSuccessHandler extends DefaultAuthenticationSuccessHandl
                 'has_error'	  => false,
                 'username'	  => $token->getUser()->getUsername(),
                 'target_path' => $this->determineTargetUrl($request)
-    		));
-		}
+            ));
+        }
 
-		return parent::onAuthenticationSuccess($request, $token);
+        return parent::onAuthenticationSuccess($request, $token);
     }
 }
