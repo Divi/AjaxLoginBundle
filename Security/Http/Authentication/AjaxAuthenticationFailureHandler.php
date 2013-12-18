@@ -15,14 +15,17 @@ use Symfony\Component\Security\Http\HttpUtils;
  */
 class AjaxAuthenticationFailureHandler extends DefaultAuthenticationFailureHandler
 {
+    /**
+     * @var mixed
+     */
     private $translator;
 
     /**
      * @param \Symfony\Component\HttpKernel\HttpKernelInterface $httpKernel
-     * @param \Symfony\Component\Security\Http\HttpUtils $httpUtils
-     * @param array $options
-     * @param \Psr\Log\LoggerInterface $logger
-     * @param type $translator
+     * @param \Symfony\Component\Security\Http\HttpUtils        $httpUtils
+     * @param array                                             $options
+     * @param \Psr\Log\LoggerInterface                          $logger
+     * @param mixed                                             $translator
      */
     public function __construct(HttpKernelInterface $httpKernel, HttpUtils $httpUtils, array $options, LoggerInterface $logger = null, $translator = null)
     {

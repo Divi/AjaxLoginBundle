@@ -1,5 +1,7 @@
+{# Include this line to get the javascript AJAX code #}
 {% include 'DiviAjaxLoginBundle:Javascript:init.html.twig' with {'form_selector': '#form-login'} %}
 
+{# Dot not forget to set the form's id attribute #form-login and link to the line above #}
 <form action="{{ path("_security_check") }}" method="post" id="form-login">
 	<div>
 		<label for="username">Username</label>
