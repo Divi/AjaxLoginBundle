@@ -21,9 +21,9 @@ class AjaxAuthenticationSuccessHandler extends DefaultAuthenticationSuccessHandl
         
         if ($request->isXmlHttpRequest()) {
             return new JsonResponse(array(
-                'has_error'	  => false,
-                'username'	  => $token->getUser()->getUsername(),
-                'target_path' => $response->getTargetUrl(),
+                'has_error'     => false,
+                'username'      => $token->getUser()->getUsername(),
+                'target_path'   => $response->getTargetUrl(),
             ));
         }
 
