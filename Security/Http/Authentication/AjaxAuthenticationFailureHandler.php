@@ -41,7 +41,7 @@ class AjaxAuthenticationFailureHandler extends DefaultAuthenticationFailureHandl
     {
         if ($request->isXmlHttpRequest()) {
             return new JsonResponse(array(
-                'has_error'	=> true,
+                'has_error' => true,
                 'error'     => $this->translator->trans($exception->getMessage())
             ));
         }
