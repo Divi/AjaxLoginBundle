@@ -4,7 +4,7 @@ namespace Divi\AjaxLoginBundle\Security\Http\Authentication;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler;
@@ -40,10 +40,10 @@ class AjaxAuthenticationFailureHandler extends DefaultAuthenticationFailureHandl
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
         if ($request->isXmlHttpRequest()) {
-            return new JsonResponse(array(
+            return new Response(json_encode(array(
                 'has_error' => true,
                 'error'     => $this->translator->trans($exception->getMessage())
-            ));
+            )));
         }
         
         return parent::onAuthenticationFailure($request, $exception);
