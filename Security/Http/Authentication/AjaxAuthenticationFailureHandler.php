@@ -2,7 +2,7 @@
 
 namespace Divi\AjaxLoginBundle\Security\Http\Authentication;
 
-use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpKernel\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
