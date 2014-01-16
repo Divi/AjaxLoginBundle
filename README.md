@@ -5,7 +5,7 @@ A simple AJAX form login for Symfony 2.
 
 ## Prerequisites
 
-This version of the bundle requires Symfony 2.x. Tested with all branches, including `2.4` branch.
+This version of the bundle requires Symfony `> 2.1`. If you have the version `2.0` or `2.1`, please switch to the branch `2.0-2.1`.
 
 ## Installation
 
