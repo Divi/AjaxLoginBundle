@@ -28,12 +28,11 @@
                 success: function (data) {
                     if (data.has_error) {
                         // Insert your error process
-                        alert(data.error);
+                        {% include 'DiviAjaxLoginBundle:Javascript:erroraction.js.twig' with {'form_selector': form_selector} %}
                     }
                     else {
                         // Insert your success process
-                        alert('Welcome ' + data.username + ' !');
-                        window.location = data.target_path;
+                        {% include 'DiviAjaxLoginBundle:Javascript:successaction.js.twig' with {'form_selector': form_selector} %}
                     }
                 }
             });
