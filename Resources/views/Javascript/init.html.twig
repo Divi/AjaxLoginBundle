@@ -12,7 +12,8 @@
 
             var $this = $(e.currentTarget),
                 inputs = {};
-
+            // Insert your pre-submit process (for example validation)
+            {% include 'DiviAjaxLoginBundle:Javascript:presubmitaction.js.twig' with {'form_selector': form_selector} %}
             // Send all form's inputs
             $.each($this.find('input'), function (i, item) {
                 var $item = $(item);
