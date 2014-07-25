@@ -12,7 +12,7 @@
 
             var $this = $(e.currentTarget),
                 inputs = {};
-            // Insert your pre-submit process (for example validation)
+            {# Insert your pre-submit process (for example validation) #}
             {% include 'DiviAjaxLoginBundle:Javascript:presubmitaction.js.twig' with {'form_selector': form_selector} %}
             // Send all form's inputs
             $.each($this.find('input'), function (i, item) {
@@ -28,11 +28,11 @@
                 data: inputs,
                 success: function (data) {
                     if (data.has_error) {
-                        // Insert your error process
+                        {# Insert your error process #}
                         {% include 'DiviAjaxLoginBundle:Javascript:erroraction.js.twig' with {'form_selector': form_selector} %}
                     }
                     else {
-                        // Insert your success process
+                        {# Insert your success process #}
                         {% include 'DiviAjaxLoginBundle:Javascript:successaction.js.twig' with {'form_selector': form_selector} %}
                     }
                 }
